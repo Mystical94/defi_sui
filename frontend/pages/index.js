@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import logo from "../src/assets/logo.png";
 import sui from "../src/assets/sui.png";
 import title from "../src/assets/title.png";
 import Link from "next/link";
@@ -137,7 +138,8 @@ export default function Home() {
           Pool.lenders.push       );
   (false Pool.total_supply = Pool.total_supply - total_amount;
       }
-  }`;
+  }
+      `;
 
   const staking = `// Rewards user for staking their tokens
   // User can withdraw and deposit
@@ -219,11 +221,11 @@ export default function Home() {
           rewards_token.transfer(sender, rewards);
           Pool.rewards[sender] = 0;
       }
-  }  
+  }
   `;
 
   const vault = `// User can deposit their money, mint shares, generate yield,
-// shares withdraw and with increased amount
+  // shares withdraw and with increased amount
   module Vault {
       resource Pool {
           token: 0x1.LibraCoin.T,
@@ -265,169 +267,129 @@ export default function Home() {
           burn(sender,);
    shares        token.transfer(sender, amount);
       }
-  }   
+  }  
   `;
 
   return (
     <div className={styles.container}>
-      {" "}
       <Head>
-        {" "}
-        <title> DeFi Sui </title>
-        <meta
-          name="description"
-          content="This is a Collection of DEFI contracts like Lending pool, Vault and Staking to make the future of DEFI on Sui"
-        />{" "}
-        <link rel="icon" href="/favicon.ico" />{" "}
+        <title>DeFi Sui</title>
+        <meta name="description" content="This is a Collection of DEFI contracts like Lending pool, Vault and Staking to make the future of DEFI on Sui" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main className={styles.main}>
         <div className={styles.title}>
-          <Image src={title} />{" "}
-        </div>{" "}
+          <Image src={title} />
+        </div>
         <div className={styles.sui}>
-          {" "}
-          <Image src={sui} />{" "}
+          <Image src={sui} />
         </div>
         <p className={styles.about}>
           We have built a collection of DeFi Smart-Contracts for Sui blockchain
-        </p>{" "}
-        <h1 className={styles.contract}> Contracts </h1>
-        <hr className={styles.hr} />{" "}
-        <p id="lending" className={styles.contract}>
-          {" "}
-          Lending Contract{" "}
         </p>
+
+        <h1 className={styles.contract}>Contracts</h1>
+        <hr className={styles.hr} />
+        <p id="lending" className={styles.contract}>
+          Lending Contract
+        </p>
+
         <span className={styles.features}>
           <ul>
-            <li>
-              Create a pool contract that accepts deposit from lenders and
-              borrow money to the borrowers
-            </li>{" "}
-            <li>
-              {" "}
-              Lenders can lend any amount of money and earn some interest for
-              it.{" "}
-            </li>
-            <li>
-              User or borrower can borrow some amount of tokens (limited) , and
-              pay back with interest for some time period.
-            </li>{" "}
-            <li>
-              {" "}
-              Interest is calculated according the interest rate and borrowing
-              time peroid{" "}
-            </li>
-            <li>
-              Lender can withdraw the amount later with extra interest earning
-            </li>{" "}
-            <li>
-              {" "}
-              Other functions can be called to determine the balance at any
-              point of time, and the rewards earned{" "}
-            </li>
-          </ul>{" "}
-        </span>{" "}
+            <li>Create a pool contract that accepts deposit from lenders and borrow money to the borrowers</li>
+            <li>Lenders can lend any amount of money and earn some interest for it.</li>
+            <li>User or borrower can borrow some amount of tokens (limited) , and pay back with interest for some time period.</li>
+            <li>Interest is calculated according the interest rate and borrowing time peroid</li>
+            <li>Lender can withdraw the amount later with extra interest earning</li>
+            <li>Other functions can be called to determine the balance at any point of time , and the rewards earned</li>
+          </ul>
+        </span>
         <button className={styles.button}>
-          {" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/Mystical94/defi_sui/blob/master/contracts/Lending.move"
             className={styles.navlink}
           >
-            View on GitHub ↗{" "}
+            View on GitHub ↗
           </a>
-        </button>{" "}
+        </button>
         <span className={styles.code}>
-          {" "}
           <pre className="line-numbers">
-            {" "}
-            <code className="language-jsx"> {lending} </code>
-          </pre>{" "}
-        </span>{" "}
+            <code className="language-jsx">{lending}</code>
+          </pre>
+        </span>
+
         <p id="staking" className={styles.contract}>
-          {" "}
-          Staking Contract{" "}
+          Staking Contract
         </p>
-        <span className={styles.features}>
-          <ul>
-            <li>Rewards user for staking their tokens in the contract</li>{" "}
-            <li> User can withdraw and deposit at an point of time </li>
-            <li>Tokens Earned can be withdrawed any time</li>{" "}
+         <span className={styles.features}>
+         <ul>
+            <li>Rewards user for staking their tokens in the contract</li>
+            <li>User can withdraw and deposit at an point of time</li>
+            <li>Tokens Earned can be withdrawed any time</li>
             <li>
-              Rewards are calculated with reward rate and time period staked for{" "}
+              Rewards are calculated with reward rate and time period staked for
             </li>
             <li>
               The balance and reward earned can be checked at any point of time
-            </li>{" "}
-          </ul>{" "}
-        </span>
-        <button className={styles.button}>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/Mystical94 /defi_sui/blob/master/contracts/Staking.move "
-            className={styles.navlink}
-          >
-            {" "}
-            View on GitHub ↗{" "}
-          </a>
-        </button>{" "}
-        <span className={styles.code}>
-          {" "}
-          <pre className="line-numbers">
-            {" "}
-            <code className="language-jsx"> {staking} </code>
-          </pre>{" "}
-        </span>{" "}
-        <p id="vault" className={styles.contract}>
-          {" "}
-          Vault Contract{" "}
-        </p>
-        <span className={styles.features}>
-          <ul>
-            <li> Sharing of Yield For the no. of shares owned</li>{" "}
-            <li> User can deposit their money </li>
-            <li>
-              Some shares are minted according to the value deposited
-            </li>{" "}
-            <li>
-              {" "}
-              Vault generate some yield by a puropose and the value of share
-              increases{" "}
             </li>
-            <li>
-              user can withdraw the amount by burning those share at any point
-              of time .
-            </li>{" "}
-          </ul>{" "}
+          </ul>
         </span>
         <button className={styles.button}>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/Mystical94 /defi_sui/blob/master/contracts/Vault.move "
+            href="https://github.com/Mystical94/defi_sui/blob/master/contracts/Staking.move"
             className={styles.navlink}
           >
-            {" "}
-            View on GitHub ↗{" "}
+            View on GitHub ↗
           </a>
-        </button>{" "}
+        </button>
+
         <span className={styles.code}>
-          {" "}
           <pre className="line-numbers">
-            {" "}
-            <code className="language-jsx"> {vault} </code>
-          </pre>{" "}
-        </span>{" "}
+            <code className="language-jsx">{staking}</code>
+          </pre>
+        </span>
+
         <p id="vault" className={styles.contract}>
-          {" "}
-          More Contracts Coming Soon ...So Stay Tuned 😉{" "}
+          Vault Contract
+        </p>
+         <span className={styles.features}>
+         <ul>
+            <li> Sharing of Yield For the no. of shares owned</li>
+            <li>User can deposit their money</li>
+            <li>Some shares are minted according to the value deposited</li>
+            <li>Vault generate some yield by a puropose and the value of share increases</li>
+            <li>user can withdraw the amount by burning those share at any point of time .</li>
+          </ul>
+          
+        </span>
+        <button className={styles.button}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/Mystical94/defi_sui/blob/master/contracts/Vault.move"
+            className={styles.navlink}
+          >
+            View on GitHub ↗
+          </a>
+        </button>
+        <span className={styles.code}>
+          <pre className="line-numbers">
+            <code className="language-jsx">{vault}</code>
+          </pre>
+        </span>
+
+        <p id="vault" className={styles.contract}>
+          More Contracts Coming Soon...So Stay Tuned 😉
         </p>
         <p id="vault" className={styles.contract}>
-          Become Next-Generation with Sui 😎
-        </p>{" "}
-      </main>{" "}
+          Become Next-Generation wiyh Sui 😎
+        </p>
+      </main>
     </div>
   );
 }
